@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RK7DataBase version="1" dataSource="" dataVersion="">
+	<DATAPACKET Version="2.0" Name="CATEGLIST" IndexFieldNames="SIFR;">
+		<METADATA>
+			<FIELDS>
+				<FIELD attrname="SIFR" fieldtype="i4"/>
+				<FIELD attrname="GUIDSTRING" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="CODE" fieldtype="i4"/>
+				<FIELD attrname="NAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="ALTNAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="COMMENT" fieldtype="string" WIDTH="101"/>
+				<FIELD attrname="PARENT" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_IMAGE" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_BCOLOR" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_TEXTCOLOR" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_FLAGS" fieldtype="i2"/>
+				<FIELD attrname="TOPARENTCATEG" fieldtype="i4"/>
+				<FIELD attrname="STATUS" fieldtype="i2"/>
+				<FIELD attrname="EXTCODE" fieldtype="i4"/>
+				<FIELD attrname="EXTRESTID" fieldtype="i4"/>
+				<FIELD attrname="EDITRIGHT" fieldtype="i2"/>
+				<FIELD attrname="RIGHTLVL" fieldtype="i2"/>
+				<FIELD attrname="ADDTOORDER" fieldtype="i2"/>
+				<FIELD attrname="CATEGKIND" fieldtype="i4"/>
+				<FIELD attrname="RECSTAMP" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="GUIDLinkMainParent" fieldtype="string" WIDTH="39"/>
+			</FIELDS>
+			<PARAMS/>
+		</METADATA>
+		<ROWDATA>
+			<ROW SIFR="1000014" GUIDSTRING="{CB4F41BE-8902-4F19-B984-D2323DC7ACC2}" CODE="2" NAME="еда" ALTNAME="" COMMENT="" PARENT="0" VISUALTYPE_IMAGE="0" VISUALTYPE_BCOLOR="536870911" VISUALTYPE_TEXTCOLOR="536870911" VISUALTYPE_FLAGS="0" STATUS="3" EXTCODE="2" EDITRIGHT="0" RIGHTLVL="0" ADDTOORDER="0" CATEGKIND="0"/>
+		</ROWDATA>
+	</DATAPACKET>
+	<DATAPACKET Version="2.0" Name="DEVICEDATALOOKUPITEMS" IndexFieldNames="SIFR;">
+		<METADATA>
+			<FIELDS>
+				<FIELD attrname="SIFR" fieldtype="i4"/>
+				<FIELD attrname="GUIDSTRING" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="RAWINPUTDATA" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="SUBSTITUDEMODE" fieldtype="i2"/>
+				<FIELD attrname="DECODEDDATA" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="OBJREFNO" fieldtype="i2"/>
+				<FIELD attrname="OBJIDENT" fieldtype="i4"/>
+				<FIELD attrname="FLAGS" fieldtype="i4"/>
+				<FIELD attrname="RECSTAMP" fieldtype="string" WIDTH="39"/>
+			</FIELDS>
+			<PARAMS/>
+		</METADATA>
+		<ROWDATA>
+			<ROW SIFR="2" GUIDSTRING="{10C3F4A5-9131-465E-8017-7D24F20F2156}" RAWINPUTDATA="7622210372192" SUBSTITUDEMODE="2" DECODEDDATA="1000" OBJREFNO="10" OBJIDENT="1000016" FLAGS="1"/>
+		</ROWDATA>
+	</DATAPACKET>
+	<DATAPACKET Version="2.0" Name="MENUITEMS" IndexFieldNames="SIFR;">
+		<METADATA>
+			<FIELDS>
+				<FIELD attrname="SIFR" fieldtype="i4"/>
+				<FIELD attrname="GUIDSTRING" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="CODE" fieldtype="i4"/>
+				<FIELD attrname="NAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="ALTNAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="SHORTNAME" fieldtype="string" WIDTH="11"/>
+				<FIELD attrname="ALTSHORTNAME" fieldtype="string" WIDTH="11"/>
+				<FIELD attrname="PORTIONWEIGHT" fieldtype="i8"/>
+				<FIELD attrname="PORTIONNAME" fieldtype="string" WIDTH="11"/>
+				<FIELD attrname="ALTPORTION" fieldtype="string" WIDTH="11"/>
+				<FIELD attrname="KURS" fieldtype="i4"/>
+				<FIELD attrname="QNTDECDIGITS" fieldtype="i2"/>
+				<FIELD attrname="MODISCHEME" fieldtype="i4"/>
+				<FIELD attrname="MODIWEIGHT" fieldtype="i2"/>
+				<FIELD attrname="TAXDISHTYPE" fieldtype="i4"/>
+				<FIELD attrname="COOKMINS" fieldtype="i2"/>
+				<FIELD attrname="COMMENT" fieldtype="string" WIDTH="101"/>
+				<FIELD attrname="INSTRUCT" fieldtype="bin.hex" SUBTYPE="Binary"/>
+				<FIELD attrname="FLAGS" fieldtype="i2"/>
+				<FIELD attrname="SCALECOEF" fieldtype="i4"/>
+				<FIELD attrname="TARAWEIGHT" fieldtype="i8"/>
+				<FIELD attrname="CONFIRMQNT" fieldtype="i8"/>
+				<FIELD attrname="MINRESTQNT" fieldtype="i8"/>
+				<FIELD attrname="VISUALTYPE_IMAGE" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_BCOLOR" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_TEXTCOLOR" fieldtype="i4"/>
+				<FIELD attrname="VISUALTYPE_FLAGS" fieldtype="i2"/>
+				<FIELD attrname="SALESTERMS_FLAG" fieldtype="i2"/>
+				<FIELD attrname="SALESTERMS_STARTSALE" fieldtype="i8"/>
+				<FIELD attrname="SALESTERMS_STOPSALE" fieldtype="i8"/>
+				<FIELD attrname="MINTERFACE" fieldtype="i4"/>
+				<FIELD attrname="PARENT" fieldtype="i4"/>
+				<FIELD attrname="TOPARENTCATEG" fieldtype="i4"/>
+				<FIELD attrname="RIGHTLVL" fieldtype="i2"/>
+				<FIELD attrname="STATUS" fieldtype="i2"/>
+				<FIELD attrname="EXTCODE" fieldtype="i4"/>
+				<FIELD attrname="EXTRESTID" fieldtype="i4"/>
+				<FIELD attrname="SALEOBJECTTYPE" fieldtype="i2"/>
+				<FIELD attrname="RATETYPE" fieldtype="i2"/>
+				<FIELD attrname="ITEMKIND" fieldtype="i4"/>
+				<FIELD attrname="ROUNDTIME" fieldtype="i4"/>
+				<FIELD attrname="MINIMUMTARIFTIME" fieldtype="i4"/>
+				<FIELD attrname="MAXIMUMTARIFTIME" fieldtype="i4"/>
+				<FIELD attrname="IGNOREDTARIFTIME" fieldtype="i4"/>
+				<FIELD attrname="DEFTARIFTIMELIMIT" fieldtype="i4"/>
+				<FIELD attrname="MINTARIFAMOUNT" fieldtype="i8"/>
+				<FIELD attrname="MAXTARIFAMOUNT" fieldtype="i8"/>
+				<FIELD attrname="TARIFFROUNDRULE" fieldtype="i2"/>
+				<FIELD attrname="MONEYROUNDRULE" fieldtype="i2"/>
+				<FIELD attrname="COMBOSPLITMODE" fieldtype="i4"/>
+				<FIELD attrname="COMBOJOINMODE" fieldtype="i4"/>
+				<FIELD attrname="ADDLINEMODE" fieldtype="i4"/>
+				<FIELD attrname="COMBODISCOUNT" fieldtype="i4"/>
+				<FIELD attrname="CHANGETOCOMBO" fieldtype="i4"/>
+				<FIELD attrname="LARGEIMAGEPATH" fieldtype="bin.hex" SUBTYPE="Binary"/>
+				<FIELD attrname="GUESTSDISHRATING" fieldtype="i8"/>
+				<FIELD attrname="RECSTAMP" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="GUIDLinkMainParent" fieldtype="string" WIDTH="39"/>
+			</FIELDS>
+			<PARAMS/>
+		</METADATA>
+		<ROWDATA>
+			<ROW SIFR="1000016" GUIDSTRING="{39C22EE6-8503-49A7-8D08-283FEC0AF0F0}" CODE="4" NAME="пирожок с картохой" ALTNAME="" SHORTNAME="" ALTSHORTNAME="" PORTIONWEIGHT="0" PORTIONNAME="" ALTPORTION="" KURS="0" QNTDECDIGITS="0" MODISCHEME="0" MODIWEIGHT="0" TAXDISHTYPE="1" COOKMINS="0" COMMENT="5" INSTRUCT="weXr6ugtMTU7ICDG6PD7LTEwOyDT4+vl4u7k+y0yMjE7INHu8fLg4jogzO7w6u7i6uAsINDl5Ojx6uAsIM/u7Ojk7vDq6Cwg0eDr4PLo6iDxIOrg7/Px8u7pIO3uIO3lIOrw4PHt++k=" FLAGS="0" TARAWEIGHT="0" CONFIRMQNT="0" MINRESTQNT="0" VISUALTYPE_IMAGE="0" VISUALTYPE_BCOLOR="536870911" VISUALTYPE_TEXTCOLOR="536870911" VISUALTYPE_FLAGS="0" SALESTERMS_FLAG="0" SALESTERMS_STARTSALE="44008" SALESTERMS_STOPSALE="44008" MINTERFACE="0" PARENT="1000014" RIGHTLVL="0" STATUS="3" EXTCODE="2" SALEOBJECTTYPE="0" RATETYPE="0" ITEMKIND="1" ROUNDTIME="1" MINIMUMTARIFTIME="0" MAXIMUMTARIFTIME="0" IGNOREDTARIFTIME="0" DEFTARIFTIMELIMIT="0" MINTARIFAMOUNT="0" MAXTARIFAMOUNT="0" TARIFFROUNDRULE="0" MONEYROUNDRULE="0" COMBOSPLITMODE="0" COMBOJOINMODE="0" ADDLINEMODE="0" COMBODISCOUNT="0" CHANGETOCOMBO="0" GUESTSDISHRATING="300"/>
+			<ROW SIFR="1000015" GUIDSTRING="{A37C4977-91B6-4607-96E7-5AD45F0E9154}" CODE="3" NAME="пирожок с капустой" ALTNAME="" SHORTNAME="" ALTSHORTNAME="" PORTIONWEIGHT="1" PORTIONNAME="кг" ALTPORTION="kg" KURS="0" QNTDECDIGITS="3" MODISCHEME="0" MODIWEIGHT="0" TAXDISHTYPE="1" COOKMINS="0" COMMENT="5" INSTRUCT="weXr6ugtMTU7ICDG6PD7LTEwOyDT4+vl4u7k+y0yMjE7INHu8fLg4jogzO7w6u7i6uAsINDl5Ojx6uAsIM/u7Ojk7vDq6Cwg0eDr4PLo6iDxIOrg7/Px8u7pIO3uIO3lIOrw4PHt++k=" FLAGS="72" TARAWEIGHT="0" CONFIRMQNT="0" MINRESTQNT="0" VISUALTYPE_IMAGE="0" VISUALTYPE_BCOLOR="536870911" VISUALTYPE_TEXTCOLOR="536870911" VISUALTYPE_FLAGS="0" SALESTERMS_FLAG="0" SALESTERMS_STARTSALE="44008" SALESTERMS_STOPSALE="44008" MINTERFACE="0" PARENT="1000014" RIGHTLVL="0" STATUS="3" EXTCODE="1" SALEOBJECTTYPE="0" RATETYPE="0" ITEMKIND="1" ROUNDTIME="1" MINIMUMTARIFTIME="0" MAXIMUMTARIFTIME="0" IGNOREDTARIFTIME="0" DEFTARIFTIMELIMIT="0" MINTARIFAMOUNT="0" MAXTARIFAMOUNT="0" TARIFFROUNDRULE="0" MONEYROUNDRULE="0" COMBOSPLITMODE="0" COMBOJOINMODE="0" ADDLINEMODE="0" COMBODISCOUNT="0" CHANGETOCOMBO="0" GUESTSDISHRATING="300"/>
+		</ROWDATA>
+	</DATAPACKET>
+	<DATAPACKET Version="2.0" Name="PRICETYPES" IndexFieldNames="SIFR;">
+		<METADATA>
+			<FIELDS>
+				<FIELD attrname="SIFR" fieldtype="i4"/>
+				<FIELD attrname="GUIDSTRING" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="CODE" fieldtype="i4"/>
+				<FIELD attrname="NAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="ALTNAME" fieldtype="string" WIDTH="41"/>
+				<FIELD attrname="PARENTPRICETYPE" fieldtype="i4"/>
+				<FIELD attrname="ROUNDRULE" fieldtype="i2"/>
+				<FIELD attrname="FLAGS" fieldtype="i4"/>
+				<FIELD attrname="DEFCONSUMPERCENT" fieldtype="i4"/>
+				<FIELD attrname="DEFBONUSPERCENT" fieldtype="i4"/>
+				<FIELD attrname="STATUS" fieldtype="i2"/>
+				<FIELD attrname="EDITRIGHT" fieldtype="i2"/>
+				<FIELD attrname="DEFCOMBOPERCENT" fieldtype="i4"/>
+				<FIELD attrname="PRICETYPETYPE" fieldtype="i2"/>
+				<FIELD attrname="SHCOMMODITYGROUP" fieldtype="string" WIDTH="101"/>
+				<FIELD attrname="SHSTOREHOUSE" fieldtype="string" WIDTH="101"/>
+				<FIELD attrname="SHSETTINGSLINK" fieldtype="i4"/>
+				<FIELD attrname="ALLOWOVERRIDINGS" fieldtype="i2"/>
+				<FIELD attrname="RECSTAMP" fieldtype="string" WIDTH="39"/>
+				<FIELD attrname="GUIDLinkMainParent" fieldtype="string" WIDTH="39"/>
+			</FIELDS>
+			<PARAMS/>
+		</METADATA>
+		<ROWDATA>
+			<ROW SIFR="3" GUIDSTRING="{30CF7B8A-3F50-4527-AE62-A2C6F0C08682}" CODE="1" NAME="Основная" ALTNAME="Main" PARENTPRICETYPE="0" ROUNDRULE="0" FLAGS="236" DEFCONSUMPERCENT="0" DEFBONUSPERCENT="0" STATUS="3" EDITRIGHT="1" DEFCOMBOPERCENT="0" PRICETYPETYPE="0" SHCOMMODITYGROUP="" SHSTOREHOUSE="" SHSETTINGSLINK="0" ALLOWOVERRIDINGS="0"/>
+			<ROW SIFR="4" GUIDSTRING="{6934C78F-A101-4C1F-81D3-F791578670F1}" CODE="2" NAME="Себестоимость" ALTNAME="Self-Cost" PARENTPRICETYPE="0" ROUNDRULE="0" FLAGS="0" DEFCONSUMPERCENT="0" DEFBONUSPERCENT="0" STATUS="3" EDITRIGHT="0" DEFCOMBOPERCENT="0" PRICETYPETYPE="1" SHCOMMODITYGROUP="" SHSTOREHOUSE="" SHSETTINGSLINK="0" ALLOWOVERRIDINGS="0"/>
+		</ROWDATA>
+	</DATAPACKET>
+	<DATAPACKET Version="2.0" Name="PRICES" IndexFieldNames="SIFR;">
+		<METADATA>
+			<FIELDS>
+				<FIELD attrname="SIFR" fieldtype="i4"/>
+				<FIELD attrname="OBJECTID" fieldtype="i4"/>
+				<FIELD attrname="SPECIES" fieldtype="i2"/>
+				<FIELD attrname="PRICETYPE" fieldtype="i4"/>
+				<FIELD attrname="MODIFIERS" fieldtype="i4"/>
+				<FIELD attrname="VALUE" fieldtype="i8"/>
+				<FIELD attrname="RECSTAMP" fieldtype="string" WIDTH="39"/>
+			</FIELDS>
+			<PARAMS/>
+		</METADATA>
+		<ROWDATA>
+			<ROW SIFR="100002" OBJECTID="1000016" SPECIES="1" PRICETYPE="3" MODIFIERS="0" VALUE="5000"/>
+			<ROW SIFR="100005" OBJECTID="1000016" SPECIES="1" PRICETYPE="4" MODIFIERS="0" VALUE="9223372036854775807"/>
+			<ROW SIFR="100001" OBJECTID="1000015" SPECIES="1" PRICETYPE="3" MODIFIERS="0" VALUE="10000"/>
+			<ROW SIFR="100006" OBJECTID="1000015" SPECIES="1" PRICETYPE="4" MODIFIERS="0" VALUE="9223372036854775807"/>
+		</ROWDATA>
+	</DATAPACKET>
+</RK7DataBase>
