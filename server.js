@@ -69,7 +69,11 @@ const stringCommand = ( bufferValue, bufferLength ) => {
  * в формат протокола для стандарта RS-232C */
 
 const numberValCommand = (value, length) => {
-  const hexValue = (value).toString(16).padStart(length * 2, "0");
+  const parsedValue = parseInt(value, 10);
+  if (isNaN(parsedValue)) {
+    throw Error('Значение передаваемое функции numberValCommand должно быть числом');
+  }
+  const hexValue = (parsedValue).toString(16).padStart(length * 2, "0");
   const buffer = Buffer.from(hexValue, 'hex').reverse();
   return buffer.toString("hex");
 }
@@ -87,11 +91,11 @@ xmlParser.parse((err, products) => {
 
   products.forEach(({code, name, price, period, instruct}, idx) => {
     setTimeout(() => {
-        const numberPLU = numberValCommand(parseInt(code, 10), 2);
-        const codeProduct = numberValCommand(parseInt(code, 10), 4);
+        const numberPLU = numberValCommand(code, 2); // из XML значения приходят в строке - из надо парсить в число
+        const codeProduct = numberValCommand(code, 4);
         const nameProduct = stringCommand(name, 28);
-        const priceProduct = numberValCommand(parseInt(price, 10), 4);
-        const periodProduct = numberValCommand(parseInt(period, 10), 2)
+        const priceProduct = numberValCommand(price, 4);
+        const periodProduct = numberValCommand(period, 2)
         const instructProduct = iconv.decode(Buffer.from(instruct, 'base64'), 'win1251').slice(0, 400);
 
         /** Message sending Function */
