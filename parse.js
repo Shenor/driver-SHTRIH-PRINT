@@ -15,7 +15,7 @@ module.exports = {
             return tagname === "row" && attribs.name && attribs.code && attribs.instruct;
         };
 
-        fs.readFile('./1213.xml', null, (err, data) => {
+        fs.readFile('./scale.xml', null, (err, data) => {
             if (err) { return callback(err) }
             const file = iconv.decode(data, "cp1251").toString();
 
@@ -23,7 +23,7 @@ module.exports = {
                 onopentag(tagname, attribs) {
                     if (isPriceTag(tagname, attribs)) {
                         priceList.push({
-                            value: attribs.value
+                            price: attribs.value
                         });
                     }
                     if (isProdTag(tagname, attribs)) {

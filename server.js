@@ -74,52 +74,53 @@ const numberValCommand = (value, length) => {
   return buffer.toString("hex");
 }
 
+//** Задаем переменные необходимые для команды записи в ПЛУ */
+const pass = stringCommand("0030", 4);
+const name2 = stringCommand("", 28);
+const tara = numberValCommand(0, 2);
+const groupCode = numberValCommand(1, 2)
+const numImage = numberValCommand(0, 1);
+const rosStet = numberValCommand(10, 4);
+
 xmlParser.parse((err, products) => {
   if(err) {throw Error(err)}
 
-  console.log(products);
+  products.forEach(({code, name, price, period, instruct}, idx) => {
+    setTimeout(() => {
+        const numberPLU = numberValCommand(parseInt(code, 10), 2);
+        const codeProduct = numberValCommand(parseInt(code, 10), 4);
+        const nameProduct = stringCommand(name, 28);
+        const priceProduct = numberValCommand(parseInt(price, 10), 4);
+        const periodProduct = numberValCommand(parseInt(period, 10), 2)
+        const instructProduct = iconv.decode(Buffer.from(instruct, 'base64'), 'win1251').slice(0, 400);
+
+        /** Message sending Function */
+        let sybomCount = 0,
+          stringCount = 1;
+
+        while (instructProduct.slice(sybomCount, sybomCount + 50) != "") {
+          const writeMessage = Buffer.from(`02${(58).toString(16)}52${pass}${numberPLU}${numberValCommand(stringCount, 1)}${stringCommand(instructProduct.slice(sybomCount, sybomCount + 50), 50)}`, 'hex');
+
+          setTimeout(() => {
+            serverUDP.send(writeMessage, scalesUDPport, scalesUDPip);
+          }, sybomCount + 100); //Из-за ограничений протокола UDP необходимо ставить таймауты, что бы пакеты доходили
+
+          sybomCount += 50;
+          stringCount++;
+        }
+
+        const sing = Buffer.from(`02${(84).toString(16)}50${pass}${numberPLU}${codeProduct}${nameProduct}${name2}${priceProduct}${periodProduct}${tara}${groupCode}${numberPLU}${numImage}${rosStet}`, 'hex');
+        console.log('_____________________\n')
+        serverUDP.send(sing, scalesUDPport, scalesUDPip);
+        console.log(sing);
+        console.log(sing.length - 2);
+
+    }, (idx + 1) * 500);
+  });
+  
 });
 
-//** Задаем переменные необходимые для команды записи в ПЛУ */
-const lengthMSG = (84).toString(16);
-const pass      = stringCommand("0030", 4);
-const numberPLU = numberValCommand(1, 2);
-const code      = numberValCommand(1, 4);
-const name      = stringCommand("Гачимучи_вэн", 28);
-const name2     = stringCommand("", 28);
-const price     = numberValCommand(2000, 4);
-const period    = numberValCommand(5, 2);
-const tara      = numberValCommand(0, 2);
-const groupCode = numberValCommand(1, 2)
-const numMsg    = numberValCommand(1, 2);
-const numImage  = numberValCommand(0, 1);
-const rosStet   = numberValCommand(10, 4);
-
-/** Message sending Procedure */
-let sybomCount = 0,
-  stringCount = 1;
-
-// const text = `Передаю привет всем моим подпищикам, кидаю лайкус12345678912345678912345678 третья строка пойдёт сейчас когда пойдёт четвёртая я не знаю а так играю. Играю в доту с пацанами мне кричат жапаузынды я игнорю и хукаю, во даете пацаны!`.slice(0, 400);
-
-// while (text.slice(sybomCount, sybomCount + 50) != "") {
-//         const writeMessage = Buffer.from(`02${(58).toString(16)}52${pass}${numberPLU}${numberValCommand(stringCount, 1)}${stringCommand(text.slice(sybomCount, sybomCount + 50), 50)}`, 'hex');
-
-//         setTimeout(() => {
-//           serverUDP.send(writeMessage, scalesUDPport, scalesUDPip);
-//         }, sybomCount + 100);
-
-//         console.log(stringCount)
-//         console.log(text.slice(sybomCount, sybomCount + 50));
-
-//         sybomCount += 50;
-//         stringCount++;
-// }
-
-// const sing = Buffer.from(`02${lengthMSG}50${pass}${numberPLU}${code}${name}${name2}${price}${period}${tara}${groupCode}${numMsg}${numImage}${rosStet}`, 'hex');
-// const sing = Buffer.from(`02ff55${pass}${numberValCommand(1, 1)}${numberValCommand(1, 2)}${code}${name}${name2}${price}${period}${tara}${groupCode}${numberPLU}${numImage}${rosStet}080720`, 'hex');
-// console.log(sing);
-// console.log(sing.length - 2);
-// serverUDP.send(sing, scalesUDPport, scalesUDPip);
+serverHTTP.close();
 
 /* Instuction */
 
@@ -146,3 +147,4 @@ let sybomCount = 0,
 // -> Создае буффер из строки выше в hex и переворачиваем его => Buffer.from(hexValue, 'hex').reverse();
 //
 //==> Пароли передаются в виде "0030" => "30 30 33 30" (toString('hex'))
+// Заполняя товары необходимо указывать название код и состав, иначе выгрузка из XML не увидит товары
